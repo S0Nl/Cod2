@@ -1,82 +1,19 @@
 package com.example.yorik.fragment;
 
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
-public class Fragment2 extends Fragment  {
-    private TextView txtView;
-   // private Button f2button;
-    private EditText f1EditText;
-
-
-
-   /* @Override
-    public void onCreate(Bundle savedBundleInstance) {
-
-        //View v=inflater.inflate(R.layout.fragment2,null);
-        super.onCreate(savedBundleInstance);
-        //f1EditText.addTextChangedListener(textWatcher);
-
-    }*/
+public class Fragment2 extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View v=inflater.inflate(R.layout.fragment2,null);
-        f1EditText.addTextChangedListener(textWatcher);
         return v;
     }
 
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        txtView=(TextView)getActivity().findViewById(R.id.txtView);
-        f1EditText=(EditText)getActivity().findViewById(R.id.f1EditText);
-        //f2button=(Button)getActivity().findViewById(R.id.f2button);
-        //f2button.setOnClickListener(this);
-    }
-
-     TextWatcher textWatcher  = new TextWatcher() {
-
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            txtView.setText(String.valueOf(s.length()));
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-
-        }
-
-    };
-
-
-/*
-    @Override
-    public void onClick(View v) {
-        int s=f1EditText.getText().toString().length();
-        String.valueOf(s);
-        txtView.setText("Довжина стрічки " + s);
-        f1EditText.addTextChangedListener(textWatcher);
-    }*/
-
-    
 }
